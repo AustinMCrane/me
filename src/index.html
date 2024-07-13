@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>{{ .Basics.Name }} Resume</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<main id="main">
+			<div class="container mx-auto">
+				<div id="header" class="pb-8">
+					<h1 class="text-3xl">{{ .Basics.Name }}, {{ .Basics.Label }}</h1>
+					<h3 class="text-2xl">{{ .Basics.Email }}</h3>
+					<a href="resume.json" class="text-2xl">JSON Resume</h3>
+				</div>
+				<div id="resume" class="columns-2">
+					<div class="w-full">
+						<div id="summary" class="pb-4">
+							<h2 class="text-2xl">Introduction</h2>
+							<p>{{ .Basics.Summary }}</p>
+						</div>
+						<div id="skills" class="pb-4">
+							<h2 class="text-2xl">Skills</h2>
+							<ul>
+								{{ range .Skills }}
+									<li class="list-none">{{ .Name }}</li>
+								{{ end }}
+							</ul>
+						</div>
+						<div id="education" class="pb-4">
+							<h2 class="text-2xl">Education</h2>
+							<ul>
+								{{ range .Education }}
+									<li class="list-none">{{ .Institution }}</li>
+								{{ end }}
+							</ul>
+						</div>
+						<div id="profiles" class="pb-4">
+							<ul>
+								{{ range .Basics.Profiles }}
+									<li class="list-none">
+										<h2 class="text-2xl">{{ .Network }}</h2>
+										<a class="link" href="{{.URL }}">{{ .Username }}</a>
+									</li>
+								{{ end }}
+							</ul>
+						</div>
+						<div id="employment" class="pb-4">
+							<h2 class="text-2xl">Employment</h2>
+							<ul>
+								{{ range .Work }}
+									<li class="list-none pb-4">
+										<h2 class="text-xl">{{ .Name}} - {{ .Position }}</h2>
+										<p>{{ .Summary }}</p>
+									</li>
+								{{ end }}
+							</ul>
+						</div>
+					</div>
+					<div class="w-full">
+						<div id="projects" class="pb-4">
+							<h2 class="text-2xl">Projects</h2>
+							<ul>
+								{{ range .Projects }}
+									<li class="list-none pb-4">
+										<h2 class="text-xl">{{ .Name}}</h2>
+										<p>{{ .Description }}</p>
+									</li>
+								{{ end }}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

@@ -5,12 +5,14 @@ package main
 // generated from https://mholt.github.io/json-to-go/
 type JSONResume struct {
 	Basics struct {
-		Name     string `json:"name"`
-		Label    string `json:"label"`
-		Image    string `json:"image"`
-		Email    string `json:"email"`
-		Phone    string `json:"phone"`
-		URL      string `json:"url"`
+		Name  string `json:"name"`
+		Label string `json:"label"`
+		Image string `json:"image"`
+		Email string `json:"email"`
+		Phone string `json:"phone"`
+		URL   string `json:"url"`
+		// this is non standard but downloads a pdf version of resume
+		PDF      string `json:"pdf"`
 		Summary  string `json:"summary"`
 		Location struct {
 			Address     string `json:"address"`

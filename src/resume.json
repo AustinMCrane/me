@@ -160,16 +160,16 @@
 		},
 		{
 			"name": "Audit Log For a Large Application (AccuWeather)",
-			"startdate": "",
-			"enddate": "",
+			"startDate": "",
+			"endDate": "",
 			"description": "AccuWeather enterprise portal is a sophisticated multi-tenant application that needs to have an auditing system to keep track of what user edited what settings for a client. The audit log keeps track of everything down to a phone number change.",
 			"highlights": [],
 			"url": ""
 		},
 		{
 			"name": "Multi-Tenant Authorization System (Ad Hoc)",
-			"startdate": "",
-			"enddate": "",
+			"startDate": "",
+			"endDate": "",
 			"description": "A authorization system used to allow hospitals, surgery centers and clinics the ability to interface with their network to submit data to Healthcare Quality Reporting system",
 			"highlights": [],
 			"url": ""

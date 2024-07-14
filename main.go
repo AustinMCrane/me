@@ -8,17 +8,19 @@ import (
 	"text/template"
 )
 
+var (
+	outputPath = "public"
+	inputPath  = "src"
+)
+
 func main() {
-	cmdName := os.Args[0]
 	args := os.Args[1:]
 	// input dir and output dir
-	if len(args) != 2 {
-		fmt.Println(fmt.Sprintf("Usage: %s <input_dir> <output_dir>", cmdName))
-		os.Exit(1)
+	if len(args) == 2 {
+		outputPath = args[0]
+		inputPath = args[1]
 	}
 
-	inputPath := args[0]
-	outputPath := args[1]
 	if err := Exec(inputPath, outputPath); err != nil {
 		panic(err)
 	}
